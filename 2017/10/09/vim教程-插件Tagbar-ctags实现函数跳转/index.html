@@ -79,18 +79,21 @@
 
 
 
-<meta name="description" content="安装ctags 由于tagbar需要ctags支持，所以先安装ctags  ctags介绍： Ctags是一个用于从程序源代码树产生索引文件（或tag文件)，从而便于文本编辑器来实现快速定位的实用工具。在产生的tag文件中，每一个tag的入口指向了一个编程语言的对象。这个对象可以是变量定义、函数、类或其他的物件。(引自Wikipedia)  ctags安装 直接安装  ubuntu安装 1sudo">
+<meta name="description" content="问题常用代码阅读软件和IDE都具备自动跳转函数定义，结构体定义功能，但是在vim下，无法直接完成，需要配合其他工具以及插件来实现，本文主要介绍Ctags和tagbar，协助linux开发下vim编辑器中，代码阅读以及开发。 1. 实现函数，变量大纲显示2. 实现结构体，函数定义直接跳转安装ctags 由于tagbar需要ctags支持，所以先安装ctags  ctags介绍： Ctags是一个用于">
 <meta name="keywords" content="vim系列">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vim教程-插件Tagbar+ctags实现函数跳转">
 <meta property="og:url" content="http://yoursite.com/2017/10/09/vim教程-插件Tagbar-ctags实现函数跳转/index.html">
 <meta property="og:site_name" content="AlphaFei Blog">
-<meta property="og:description" content="安装ctags 由于tagbar需要ctags支持，所以先安装ctags  ctags介绍： Ctags是一个用于从程序源代码树产生索引文件（或tag文件)，从而便于文本编辑器来实现快速定位的实用工具。在产生的tag文件中，每一个tag的入口指向了一个编程语言的对象。这个对象可以是变量定义、函数、类或其他的物件。(引自Wikipedia)  ctags安装 直接安装  ubuntu安装 1sudo">
+<meta property="og:description" content="问题常用代码阅读软件和IDE都具备自动跳转函数定义，结构体定义功能，但是在vim下，无法直接完成，需要配合其他工具以及插件来实现，本文主要介绍Ctags和tagbar，协助linux开发下vim编辑器中，代码阅读以及开发。 1. 实现函数，变量大纲显示2. 实现结构体，函数定义直接跳转安装ctags 由于tagbar需要ctags支持，所以先安装ctags  ctags介绍： Ctags是一个用于">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2017-10-09T04:46:19.701Z">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fkc1o9hzdqj31kw0zkwxx.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fkc1v4nrrej31by0zeqhs.jpg">
+<meta property="og:updated_time" content="2017-10-09T08:04:01.357Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vim教程-插件Tagbar+ctags实现函数跳转">
-<meta name="twitter:description" content="安装ctags 由于tagbar需要ctags支持，所以先安装ctags  ctags介绍： Ctags是一个用于从程序源代码树产生索引文件（或tag文件)，从而便于文本编辑器来实现快速定位的实用工具。在产生的tag文件中，每一个tag的入口指向了一个编程语言的对象。这个对象可以是变量定义、函数、类或其他的物件。(引自Wikipedia)  ctags安装 直接安装  ubuntu安装 1sudo">
+<meta name="twitter:description" content="问题常用代码阅读软件和IDE都具备自动跳转函数定义，结构体定义功能，但是在vim下，无法直接完成，需要配合其他工具以及插件来实现，本文主要介绍Ctags和tagbar，协助linux开发下vim编辑器中，代码阅读以及开发。 1. 实现函数，变量大纲显示2. 实现结构体，函数定义直接跳转安装ctags 由于tagbar需要ctags支持，所以先安装ctags  ctags介绍： Ctags是一个用于">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fkc1o9hzdqj31kw0zkwxx.jpg">
 
 
 
@@ -310,7 +313,8 @@
       
 
       
-        <h1 id="安装ctags"><a href="#安装ctags" class="headerlink" title="安装ctags"></a>安装ctags</h1><blockquote>
+        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>常用代码阅读软件和IDE都具备自动跳转函数定义，结构体定义功能，但是在vim下，无法直接完成，需要配合其他工具以及插件来实现，本文主要介绍Ctags和tagbar，协助linux开发下vim编辑器中，代码阅读以及开发。</p>
+<h3 id="1-实现函数，变量大纲显示"><a href="#1-实现函数，变量大纲显示" class="headerlink" title="1. 实现函数，变量大纲显示"></a>1. 实现函数，变量大纲显示</h3><h3 id="2-实现结构体，函数定义直接跳转"><a href="#2-实现结构体，函数定义直接跳转" class="headerlink" title="2. 实现结构体，函数定义直接跳转"></a>2. 实现结构体，函数定义直接跳转</h3><h1 id="安装ctags"><a href="#安装ctags" class="headerlink" title="安装ctags"></a>安装ctags</h1><blockquote>
 <p>由于tagbar需要ctags支持，所以先安装ctags</p>
 </blockquote>
 <h2 id="ctags介绍："><a href="#ctags介绍：" class="headerlink" title="ctags介绍："></a>ctags介绍：</h2><blockquote>
@@ -354,9 +358,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:BundleInstall</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h1 id="ctags使用以及vimrc配置"><a href="#ctags使用以及vimrc配置" class="headerlink" title="ctags使用以及vimrc配置"></a>ctags使用以及vimrc配置</h1><h2 id="tarbar功能"><a href="#tarbar功能" class="headerlink" title="tarbar功能"></a>tarbar功能</h2><h2 id="ctags使用"><a href="#ctags使用" class="headerlink" title="ctags使用"></a>ctags使用</h2><ol>
+<h1 id="ctags使用以及vimrc配置"><a href="#ctags使用以及vimrc配置" class="headerlink" title="ctags使用以及vimrc配置"></a>ctags使用以及vimrc配置</h1><h2 id="tarbar功能"><a href="#tarbar功能" class="headerlink" title="tarbar功能"></a>tarbar功能</h2><ol>
+<li><p>显示变量，函数列表，并可以直接跳转</p>
+<p>截图如下</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fkc1o9hzdqj31kw0zkwxx.jpg" alt="tarbar截图"></p>
+</li>
+</ol>
+<h2 id="ctags使用"><a href="#ctags使用" class="headerlink" title="ctags使用"></a>ctags使用</h2><ol>
 <li><p>生成tags文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ctags -R .</div><div class="line"><span class="meta">#</span>-R表示recursive，递归,为当前目录及其子目录中的c文件生成标签文件。最后一个.表示在当前目录。运行完当前目录会多一个文件tags</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ctags -R .</div><div class="line"><span class="meta">#</span>-R表示recursive，递归,为当前目录及其子目录中的c文件生成标签文件。最后一个.表示在当前目录。运行完当前目录会多一个文件tags 如下</div></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fkc1v4nrrej31by0zeqhs.jpg" alt="tags示例"></p>
 </li>
 <li><p>通过tags实现函数，宏定义，结构体等定义跳转</p>
 <ol>
@@ -375,7 +386,10 @@
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">set tags=tags; #设置tags路径</div></pre></td></tr></table></figure>
 <ol>
-<li>tarbar设置</li>
+<li><p>tarbar设置</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nmap&lt;F8&gt;:TagbarToggle&lt;CR&gt; "将F8映射为打开Tarbar</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
 </ol>
 
       
@@ -593,7 +607,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装ctags"><span class="nav-number">1.</span> <span class="nav-text">安装ctags</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ctags介绍："><span class="nav-number">1.1.</span> <span class="nav-text">ctags介绍：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ctags安装"><span class="nav-number">1.2.</span> <span class="nav-text">ctags安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装tagbar插件"><span class="nav-number">2.</span> <span class="nav-text">安装tagbar插件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ctags使用以及vimrc配置"><span class="nav-number">3.</span> <span class="nav-text">ctags使用以及vimrc配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tarbar功能"><span class="nav-number">3.1.</span> <span class="nav-text">tarbar功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ctags使用"><span class="nav-number">3.2.</span> <span class="nav-text">ctags使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim配置"><span class="nav-number">3.3.</span> <span class="nav-text">vim配置</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-实现函数，变量大纲显示"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 实现函数，变量大纲显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-实现结构体，函数定义直接跳转"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. 实现结构体，函数定义直接跳转</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装ctags"><span class="nav-number">2.</span> <span class="nav-text">安装ctags</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ctags介绍："><span class="nav-number">2.1.</span> <span class="nav-text">ctags介绍：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ctags安装"><span class="nav-number">2.2.</span> <span class="nav-text">ctags安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装tagbar插件"><span class="nav-number">3.</span> <span class="nav-text">安装tagbar插件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ctags使用以及vimrc配置"><span class="nav-number">4.</span> <span class="nav-text">ctags使用以及vimrc配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tarbar功能"><span class="nav-number">4.1.</span> <span class="nav-text">tarbar功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ctags使用"><span class="nav-number">4.2.</span> <span class="nav-text">ctags使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim配置"><span class="nav-number">4.3.</span> <span class="nav-text">vim配置</span></a></li></ol></li></ol></div>
             
 
           </div>
