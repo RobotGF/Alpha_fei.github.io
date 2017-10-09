@@ -3,28 +3,9 @@
 
 
     
-    
-    
-  <url>
-    <loc>http://yoursite.com/2017/10/09/Block%20Cipher%20Mode%20of%20Operation/</loc>
-    <lastmod>2017-10-09T08:23:54.276Z</lastmod>
-    <data>
-        <display>
-        <title>Block Cipher Mode of Operation</title>
-        <pubTime>2017-10-09T03:23:18.000Z</pubTime>
-        
-        <tag>cryptography</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
   <url>
     <loc>http://yoursite.com/2017/10/09/vim%E6%95%99%E7%A8%8B-%E6%8F%92%E4%BB%B6Tagbar-ctags%E5%AE%9E%E7%8E%B0%E5%87%BD%E6%95%B0%E8%B7%B3%E8%BD%AC/</loc>
-    <lastmod>2017-10-09T08:13:42.568Z</lastmod>
+    <lastmod>2017-10-09T08:47:35.468Z</lastmod>
     <data>
         <display>
         <title>vim教程-插件Tagbar+ctags实现函数跳转</title>
@@ -34,8 +15,33 @@
          
          
            
+             
+              <breadCrumb title="Vim" url="http://yoursite.com/categories/Vim/"/>
+          
         </display>
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://yoursite.com/2017/10/09/Block%20Cipher%20Mode%20of%20Operation/</loc>
+    <lastmod>2017-10-09T08:47:10.257Z</lastmod>
+    <data>
+        <display>
+        <title>Block Cipher Mode of Operation</title>
+        <pubTime>2017-10-09T03:23:18.000Z</pubTime>
+        
+        <tag>cryptography</tag>
+         
+         
+           
+             
+              <breadCrumb title="Cryptography" url="http://yoursite.com/categories/Cryptography/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
 </urlset>
