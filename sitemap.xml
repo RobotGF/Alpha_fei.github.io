@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://alphafei.cc/categories/index.html</loc>
+    <loc>http://alphafei.cc/about/index.html</loc>
     
-    <lastmod>2017-10-09T13:20:04.236Z</lastmod>
+    <lastmod>2017-10-09T15:16:14.517Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://alphafei.cc/tags/index.html</loc>
     
-    <lastmod>2017-10-09T13:20:03.300Z</lastmod>
+    <lastmod>2017-10-09T15:14:46.517Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://alphafei.cc/categories/index.html</loc>
+    
+    <lastmod>2017-10-09T15:14:44.211Z</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>http://alphafei.cc/2017/10/09/Block%20Cipher%20Mode%20of%20Operation/</loc>
     
     <lastmod>2017-10-09T08:47:10.257Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://alphafei.cc/about/index.html</loc>
-    
-    <lastmod>2017-10-09T08:35:45.967Z</lastmod>
     
   </url>
   
