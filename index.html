@@ -182,7 +182,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -192,7 +192,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -258,7 +258,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-09T11:23:18+08:00">
                 2017-10-09
@@ -300,7 +300,83 @@
       
         
           
-            
+            <h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><h2 id="Modes"><a href="#Modes" class="headerlink" title="Modes"></a>Modes</h2><h3 id="CBC"><a href="#CBC" class="headerlink" title="CBC"></a>CBC</h3><h3 id="ECB"><a href="#ECB" class="headerlink" title="ECB"></a>ECB</h3><h3 id="CFB"><a href="#CFB" class="headerlink" title="CFB"></a>CFB</h3><h3 id="OFB"><a href="#OFB" class="headerlink" title="OFB"></a>OFB</h3><h3 id="CTR"><a href="#CTR" class="headerlink" title="CTR"></a>CTR</h3><h3 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>CBC</th>
+<th>ECB</th>
+<th>CFB</th>
+<th>OFB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Encryption parallelizable</td>
+<td>×</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>Decryption parallelizable</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+</tr>
+<tr>
+<td>Random read access</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Formulas</th>
+<th>Ciphertext</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ECB</td>
+<td>Yi=F(PlainTexti,Key)</td>
+<td>Yi</td>
+</tr>
+<tr>
+<td>CBC</td>
+<td>Yi=PlainTexti XOR Ciphertexti-1</td>
+<td>F(Y,key); Ciphertext0=IV</td>
+</tr>
+<tr>
+<td>PCBC</td>
+<td>Yi=PlainTexti XOR (Ciphertexti-1 XOR PlainTexti-1)</td>
+<td>F(Y,key);Ciphertext0=IV</td>
+</tr>
+<tr>
+<td>CFB</td>
+<td>Yi=Ciphertexti-1</td>
+<td>Plaintext XOR F(Y,key);Ciphertext0=IV</td>
+</tr>
+<tr>
+<td>OFB</td>
+<td>Yi=F(Key,Ii-1);Y0=IV</td>
+<td>Plaintext XOR Yi</td>
+</tr>
+<tr>
+<td>CTR</td>
+<td>Yi=F(Key,IV + g(i) );IV=token();</td>
+<td>Plaintext XOR Yi</td>
+</tr>
+</tbody>
+</table>
+<p>Note: g(i) is any deterministic function, often the <a href="https://en.wikipedia.org/wiki/Identity_function" target="_blank" rel="external">identity function</a>.</p>
+
           
         
       
@@ -377,7 +453,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-09T00:22:23+08:00">
                 2017-10-09
@@ -589,13 +665,22 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">Tags</span>
+                
+              </div>
             
 
           </nav>
@@ -641,7 +726,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
