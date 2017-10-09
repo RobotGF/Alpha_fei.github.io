@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="AlphaFei Blog">
 <meta property="og:description" content="Background In cryptography, a block cipher mode of operation is an algorithm that uses a block cipher to provide an information service such as confidentiality or authenticity. A block cipher by itsel">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-09T04:39:48.983Z">
+<meta property="og:updated_time" content="2017-10-09T06:12:47.434Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Block Cipher Mode of Operation">
 <meta name="twitter:description" content="Background In cryptography, a block cipher mode of operation is an algorithm that uses a block cipher to provide an information service such as confidentiality or authenticity. A block cipher by itsel">
@@ -313,40 +313,7 @@
         <h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><blockquote>
 <p>In cryptography, a block cipher mode of operation is an algorithm that uses a block cipher to provide an information service such as confidentiality or authenticity. A block cipher by itself is only suitable for the secure cryptographic transformation (encryption or decryption) of one fixed-length group of bits called a block.A mode of operation describes how repeatedly to apply a cipher’s single-block operation securely to transform amounts of data larger than a block.<a href="https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation" target="_blank" rel="external">Wikipedia</a></p>
 </blockquote>
-<h2 id="Modes"><a href="#Modes" class="headerlink" title="Modes"></a>Modes</h2><h3 id="CBC"><a href="#CBC" class="headerlink" title="CBC"></a>CBC</h3><h3 id="ECB"><a href="#ECB" class="headerlink" title="ECB"></a>ECB</h3><h3 id="CFB"><a href="#CFB" class="headerlink" title="CFB"></a>CFB</h3><h3 id="OFB"><a href="#OFB" class="headerlink" title="OFB"></a>OFB</h3><h3 id="CTR"><a href="#CTR" class="headerlink" title="CTR"></a>CTR</h3><h3 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h3><table>
-<thead>
-<tr>
-<th></th>
-<th>CBC</th>
-<th>ECB</th>
-<th>CFB</th>
-<th>OFB</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Encryption parallelizable</td>
-<td>No</td>
-<td>Yes</td>
-<td>No</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Decryption parallelizable</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>No</td>
-</tr>
-<tr>
-<td>Random read access</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Yes</td>
-<td>No</td>
-</tr>
-</tbody>
-</table>
+<h2 id="Modes"><a href="#Modes" class="headerlink" title="Modes"></a>Modes</h2><h3 id="CBC"><a href="#CBC" class="headerlink" title="CBC"></a>CBC</h3><h3 id="ECB"><a href="#ECB" class="headerlink" title="ECB"></a>ECB</h3><h3 id="CFB"><a href="#CFB" class="headerlink" title="CFB"></a>CFB</h3><h3 id="OFB"><a href="#OFB" class="headerlink" title="OFB"></a>OFB</h3><h3 id="CTR"><a href="#CTR" class="headerlink" title="CTR"></a>CTR</h3><p>### </p>
 <h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><table>
 <thead>
 <tr>
@@ -389,6 +356,40 @@
 </tbody>
 </table>
 <p>Note: g(i) is any deterministic function, often the <a href="https://en.wikipedia.org/wiki/Identity_function" target="_blank" rel="external">identity function</a>.</p>
+<h3 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>CBC</th>
+<th>ECB</th>
+<th>CFB</th>
+<th>OFB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Encryption parallelizable</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Decryption parallelizable</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Random read access</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
 <li><p><a href="https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation" target="_blank" rel="external">[Wikipedia]Block cipher mode of operation</a></p>
 <p>​</p>
@@ -581,7 +582,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Background"><span class="nav-number">1.</span> <span class="nav-text">Background</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Modes"><span class="nav-number">2.</span> <span class="nav-text">Modes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CBC"><span class="nav-number">2.1.</span> <span class="nav-text">CBC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ECB"><span class="nav-number">2.2.</span> <span class="nav-text">ECB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CFB"><span class="nav-number">2.3.</span> <span class="nav-text">CFB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OFB"><span class="nav-number">2.4.</span> <span class="nav-text">OFB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CTR"><span class="nav-number">2.5.</span> <span class="nav-text">CTR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparison"><span class="nav-number">2.6.</span> <span class="nav-text">Comparison</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary"><span class="nav-number">3.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Background"><span class="nav-number">1.</span> <span class="nav-text">Background</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Modes"><span class="nav-number">2.</span> <span class="nav-text">Modes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CBC"><span class="nav-number">2.1.</span> <span class="nav-text">CBC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ECB"><span class="nav-number">2.2.</span> <span class="nav-text">ECB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CFB"><span class="nav-number">2.3.</span> <span class="nav-text">CFB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OFB"><span class="nav-number">2.4.</span> <span class="nav-text">OFB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CTR"><span class="nav-number">2.5.</span> <span class="nav-text">CTR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary"><span class="nav-number">3.</span> <span class="nav-text">Summary</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparison"><span class="nav-number">3.1.</span> <span class="nav-text">Comparison</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
