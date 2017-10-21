@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="问题需要批量提交同一执行任务，开多个Screen窗口">
+<meta name="description" content="问题需要批量提交同一执行任务，开多个Screen窗口,如果我们直接在脚本里写 screen -S my_screen, 会导致脚本无法继续执行。">
 <meta name="keywords" content="linux; shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="批量创建screen并执行命令">
 <meta property="og:url" content="http://alphafei.cc/2017/10/21/批量创建screen并执行命令/index.html">
 <meta property="og:site_name" content="AlphaFei">
-<meta property="og:description" content="问题需要批量提交同一执行任务，开多个Screen窗口">
+<meta property="og:description" content="问题需要批量提交同一执行任务，开多个Screen窗口,如果我们直接在脚本里写 screen -S my_screen, 会导致脚本无法继续执行。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2017-10-21T07:03:46.772Z">
+<meta property="og:updated_time" content="2017-10-21T07:07:07.480Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="批量创建screen并执行命令">
-<meta name="twitter:description" content="问题需要批量提交同一执行任务，开多个Screen窗口">
+<meta name="twitter:description" content="问题需要批量提交同一执行任务，开多个Screen窗口,如果我们直接在脚本里写 screen -S my_screen, 会导致脚本无法继续执行。">
 
 
 
@@ -403,9 +403,9 @@
       
 
       
-        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>需要批量提交同一执行任务，开多个Screen窗口</p>
+        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>需要批量提交同一执行任务，开多个Screen窗口,如果我们直接在脚本里写 screen -S my_screen, 会导致脚本无法继续执行。</p>
 <a id="more"></a>
-<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>screen -dmS：直接建立screen</p>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>screen -dmS：直接建立screen<br>然后通过发送命令到screen 进行执行<br>脚本如下</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>!/bin/bash</div><div class="line"></div><div class="line">for index in $(seq 0 19)</div><div class="line">do</div><div class="line">    screen_name=$"md5_$&#123;index&#125;"</div><div class="line"></div><div class="line">    #创建screen</div><div class="line">    screen -dmS $&#123;screen_name&#125;</div><div class="line">    echo"Screen $&#123;screen_name&#125; is set up!"</div><div class="line"></div><div class="line">    cmd=$" ./a.test</div><div class="line"></div><div class="line">    screen -x -S $&#123;screen_name&#125; -p 0 -X stuff "$&#123;cmd&#125;"</div><div class="line">    screen -x -S $&#123;screen_name&#125; -p 0 -X stuff '\n'</div><div class="line"></div><div class="line">    echo "Command is RUNING!"</div><div class="line"></div><div class="line">done</div></pre></td></tr></table></figure>
 <h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><p>直接通过shell脚本，批量打开screen 然后发送命令到screen 窗口进行执行。</p>
 
