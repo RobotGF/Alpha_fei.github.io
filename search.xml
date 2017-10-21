@@ -8,7 +8,7 @@
         <category>linux</category>
       </categories>
       <tags>
-        <tag>linux; shell</tag>
+        <tag>-linux -shell</tag>
       </tags>
   </entry>
   <entry>
@@ -30,7 +30,7 @@
         <category>Vim</category>
       </categories>
       <tags>
-        <tag>vim系列</tag>
+        <tag>vim</tag>
       </tags>
   </entry>
 </search>
