@@ -17,6 +17,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Block Cipher Mode of Operation]]></title>
+    <url>%2F2017%2F10%2F09%2FBlock-Cipher-Mode-of-Operation%2F</url>
+    <content type="text"><![CDATA[Background In cryptography, a block cipher mode of operation is an algorithm that uses a block cipher to provide an information service such as confidentiality or authenticity. A block cipher by itself is only suitable for the secure cryptographic transformation (encryption or decryption) of one fixed-length group of bits called a block.A mode of operation describes how repeatedly to apply a cipher’s single-block operation securely to transform amounts of data larger than a block.Wikipedia ModesCBCECBCFBOFBCTRSummary Mode Formulas Ciphertext ECB Yi=F(PlainTexti,Key) Yi CBC Yi=PlainTexti XOR Ciphertexti-1 F(Y,key); Ciphertext0=IV PCBC Yi=PlainTexti XOR (Ciphertexti-1 XOR PlainTexti-1) F(Y,key);Ciphertext0=IV CFB Yi=Ciphertexti-1 Plaintext XOR F(Y,key);Ciphertext0=IV OFB Yi=F(Key,Ii-1);Y0=IV Plaintext XOR Yi CTR Yi=F(Key,IV + g(i) );IV=token(); Plaintext XOR Yi Note: g(i) is any deterministic function, often the identity function. Comparison CBC ECB CFB OFB Encryption parallelizable No Yes No No Decryption parallelizable Yes Yes Yes No Random read access Yes Yes Yes No Reference [Wikipedia]Block cipher mode of operation ​]]></content>
+      <categories>
+        <category>Cryptography</category>
+      </categories>
+      <tags>
+        <tag>cryptography</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[vim教程-插件Tagbar+ctags实现函数跳转]]></title>
     <url>%2F2017%2F10%2F09%2Fvim%E6%95%99%E7%A8%8B-%E6%8F%92%E4%BB%B6Tagbar-ctags%E5%AE%9E%E7%8E%B0%E5%87%BD%E6%95%B0%E8%B7%B3%E8%BD%AC%2F</url>
     <content type="text"><![CDATA[问题​ 常用代码阅读软件和IDE都具备自动跳转函数定义，结构体定义功能，但是在vim下，无法直接完成，需要配合其他工具以及插件来实现，本文主要介绍Ctags和tagbar，协助linux环境下vim编辑器中，代码阅读以及开发。 1. 实现函数，变量大纲显示2. 实现结构体，函数定义直接跳转安装ctags 由于tagbar需要ctags支持，所以先安装ctags ctags介绍： Ctags是一个用于从程序源代码树产生索引文件（或tag文件)，从而便于文本编辑器来实现快速定位的实用工具。在产生的tag文件中，每一个tag的入口指向了一个编程语言的对象。这个对象可以是变量定义、函数、类或其他的物件。(引自Wikipedia) ctags安装 直接安装 ubuntu安装 1sudo apt-get install ctags Mac安装 1sudo brew install ctags 编译安装 下载 1wget https://fossies.org/linux/misc/ctags-5.8.tar.gz 解压 1tar xzvf ctags-5.8.tar.gz 编译安装 1234cd ctags-5.8 #解压后路径./configuresudo makesudo make install ​ 安装tagbar插件 Tagbar is a Vim plugin that provides an easy way to browse the tags of the current file and get an overview of its structure. It does this by creating a sidebar that displays the ctags-generated tags of the current file, ordered by their scope. This means that for example methods in C++ are displayed under the class they are defined in. From github 使用vundle安装tagbar插件 在vundle配置文件中添加 1Plugin 'majutsushi/tagbar' 打开vim安装 1:BundleInstall ctags使用以及vimrc配置tarbar功能 显示变量，函数列表，并可以直接跳转 截图如下 ctags使用 生成tags文件 12ctags -R .#-R表示recursive，递归,为当前目录及其子目录中的c文件生成标签文件。最后一个.表示在当前目录。运行完当前目录会多一个文件tags 如下 通过tags实现函数，宏定义，结构体等定义跳转 用vim打开一个已经建过标签的c文件 ctrl+] 找到光标所在位置的标签定义的地方 ctrl+t 回到跳转之前的标签处 ​ vim配置 ctags设置 1set tags=tags; #设置tags路径 tarbar设置 1nmap&lt;F8&gt;:TagbarToggle&lt;CR&gt; "将F8映射为打开Tarbar ​]]></content>
