@@ -376,8 +376,15 @@
       
         
           
-          
-          
+          Backgroud
+ 最近项目中遇到两个BUG，解决后发现还是由于自身对于基础概念的不了解
+
+Bug1 由string 拷贝到 char* string 为函数内临时变量 由于变量生存周期以及拷贝方式造成了函数返回后当时正常，但是后续操作中该char* 变为了乱码
+
+
+
+Bug2 值参数传递某一个类
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/09/04/函数传参-变量生存周期/#more" rel="contents">
