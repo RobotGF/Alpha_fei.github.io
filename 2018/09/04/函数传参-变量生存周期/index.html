@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Backgroud  最近项目中遇到两个BUG，解决后发现还是由于自身对于基础概念的不了解  Bug1 由string 拷贝到 char* string 为函数内临时变量 由于变量生存周期以及拷贝方式造成了函数返回后当时正常，但是后续操作中该char* 变为了乱码    Bug2 值参数传递某一个类对象，由于拷贝中操作的变量为新增变量，拷贝构造函数未更新，因此在值传递过程中，该变量未能成功传递，开">
+<meta name="description" content="Backgroud  最近项目中遇到两个BUG，解决后发现还是由于自身对于基础概念的不扎实,因此整理一下">
 <meta property="og:type" content="article">
 <meta property="og:title" content="函数传参&amp;变量生存周期">
 <meta property="og:url" content="http://alphafei.cc/2018/09/04/函数传参-变量生存周期/index.html">
 <meta property="og:site_name" content="AlphaFei">
-<meta property="og:description" content="Backgroud  最近项目中遇到两个BUG，解决后发现还是由于自身对于基础概念的不了解  Bug1 由string 拷贝到 char* string 为函数内临时变量 由于变量生存周期以及拷贝方式造成了函数返回后当时正常，但是后续操作中该char* 变为了乱码    Bug2 值参数传递某一个类对象，由于拷贝中操作的变量为新增变量，拷贝构造函数未更新，因此在值传递过程中，该变量未能成功传递，开">
+<meta property="og:description" content="Backgroud  最近项目中遇到两个BUG，解决后发现还是由于自身对于基础概念的不扎实,因此整理一下">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-04T03:44:26.359Z">
+<meta property="og:updated_time" content="2018-09-04T07:38:10.019Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="函数传参&amp;变量生存周期">
-<meta name="twitter:description" content="Backgroud  最近项目中遇到两个BUG，解决后发现还是由于自身对于基础概念的不了解  Bug1 由string 拷贝到 char* string 为函数内临时变量 由于变量生存周期以及拷贝方式造成了函数返回后当时正常，但是后续操作中该char* 变为了乱码    Bug2 值参数传递某一个类对象，由于拷贝中操作的变量为新增变量，拷贝构造函数未更新，因此在值传递过程中，该变量未能成功传递，开">
+<meta name="twitter:description" content="Backgroud  最近项目中遇到两个BUG，解决后发现还是由于自身对于基础概念的不扎实,因此整理一下">
 
 
 
@@ -380,14 +380,13 @@
       
 
       
-        <h1 id="Backgroud"><a href="#Backgroud" class="headerlink" title="Backgroud"></a>Backgroud</h1><blockquote>
-<p> 最近项目中遇到两个BUG，解决后发现还是由于自身对于基础概念的不了解</p>
+        <h1 id="Backgroud"><a href="#Backgroud" class="headerlink" title="Backgroud"></a>Backgroud</h1><p>  最近项目中遇到两个BUG，解决后发现还是由于自身对于基础概念的不扎实,因此整理一下<br><a id="more"></a></p>
 <ul>
-<li>Bug1 由string 拷贝到 char* string 为函数内临时变量 由于变量生存周期以及拷贝方式造成了函数返回后当时正常，但是后续操作中该char* 变为了乱码</li>
-</ul>
-</blockquote>
-<ul>
-<li><p>Bug2 值参数传递某一个类对象，由于拷贝中操作的变量为新增变量，拷贝构造函数未更新，因此在值传递过程中，该变量未能成功传递，开始由于未想到拷贝构造函数的问题，所以到debug半天找不到问题</p>
+<li><p>Bug1 由string 拷贝到 char* string 为函数内临时变量 由于变量生存周期以及拷贝方式造成了函数返回后当时正常，但是后续操作中该char* 变为了乱码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">(<span class="keyword">char</span> *str1)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">  <span class="built_in">string</span> tmp=<span class="string">"abc"</span>;</div><div class="line">  str1=(<span class="keyword">char</span>*)tmp.data();<span class="comment">//错误写法</span></div><div class="line">  <span class="comment">//strcpy(str1,tmp.c_str()); 正确写法</span></div><div class="line">  <span class="comment">//c_str() const类型</span></div><div class="line">  <span class="built_in">cout</span>&lt;&lt;str1&lt;&lt;enl;<span class="comment">//正确</span></div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//函数调用方 str1 返回正确，但是后续执行中，str1值变为了乱码</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>Bug2 值参数传递某一个类对象，由于拷贝中操作的变量为新增变量，拷贝构造函数未更新，因此在值传递过程中，该变量未能成功传递，开始由于未想到拷贝构造函数的问题，所以debug半天找不到问题</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span></span></div><div class="line"><span class="class">&#123;</span></div><div class="line">  <span class="keyword">public</span>:</div><div class="line">    Example()</div><div class="line">    &#123;</div><div class="line">    &#125;</div><div class="line">    ~Example()</div><div class="line">    &#123;</div><div class="line">    &#125;</div><div class="line">    Example(<span class="keyword">const</span> Example &amp;other)</div><div class="line">    &#123;</div><div class="line">      a=other.a;</div><div class="line">      b=other.b;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">int</span> a;</div><div class="line">    <span class="keyword">int</span> b;</div><div class="line">    <span class="keyword">int</span> c;<span class="comment">//New</span></div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">(Example a)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">  <span class="built_in">cout</span>&lt;&lt;a.c&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    Example a;</div><div class="line">    a.a=<span class="number">1</span>;</div><div class="line">    a.b=<span class="number">1</span>;</div><div class="line">    a.c=<span class="number">1</span>;</div><div class="line">    func(a);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//新增变量C后未修改拷贝函数，由于拷贝构造函数未拷贝变量c 因此该结果为 0</span></div></pre></td></tr></table></figure>
 <p>因此需要对一些基础补足，主要是函数参数传递，变量生存周期，C++拷贝构造函数。</p>
 </li>
 </ul>
@@ -396,7 +395,8 @@
 <li>C++ 构造拷贝函数，类型，区别，注意点</li>
 <li>变量生存周期以及析构函数调用时间</li>
 </ol>
-<h1 id="基础学习"><a href="#基础学习" class="headerlink" title="基础学习"></a>基础学习</h1><h2 id="函数传参"><a href="#函数传参" class="headerlink" title="函数传参"></a>函数传参</h2><h2 id="C-拷贝构造函数"><a href="#C-拷贝构造函数" class="headerlink" title="C++拷贝构造函数"></a>C++拷贝构造函数</h2><h2 id="变量生存周期"><a href="#变量生存周期" class="headerlink" title="变量生存周期"></a>变量生存周期</h2>
+<h1 id="基础学习"><a href="#基础学习" class="headerlink" title="基础学习"></a>基础学习</h1><h2 id="函数传参"><a href="#函数传参" class="headerlink" title="函数传参"></a>函数传参</h2><h3 id="传递方式"><a href="#传递方式" class="headerlink" title="传递方式"></a>传递方式</h3><p> C++ 函数传参方式共有三种：值传递、指针传递和引用传递</p>
+<h3 id="值传递"><a href="#值传递" class="headerlink" title="值传递"></a>值传递</h3><h3 id="指针传递"><a href="#指针传递" class="headerlink" title="指针传递"></a>指针传递</h3><h3 id="引用传递"><a href="#引用传递" class="headerlink" title="引用传递"></a>引用传递</h3><h2 id="C-拷贝构造函数"><a href="#C-拷贝构造函数" class="headerlink" title="C++拷贝构造函数"></a>C++拷贝构造函数</h2><h2 id="变量生存周期"><a href="#变量生存周期" class="headerlink" title="变量生存周期"></a>变量生存周期</h2>
       
     </div>
     
@@ -653,7 +653,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Backgroud"><span class="nav-number">1.</span> <span class="nav-text">Backgroud</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础学习"><span class="nav-number">3.</span> <span class="nav-text">基础学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数传参"><span class="nav-number">3.1.</span> <span class="nav-text">函数传参</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-拷贝构造函数"><span class="nav-number">3.2.</span> <span class="nav-text">C++拷贝构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量生存周期"><span class="nav-number">3.3.</span> <span class="nav-text">变量生存周期</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Backgroud"><span class="nav-number">1.</span> <span class="nav-text">Backgroud</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础学习"><span class="nav-number">3.</span> <span class="nav-text">基础学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数传参"><span class="nav-number">3.1.</span> <span class="nav-text">函数传参</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#传递方式"><span class="nav-number">3.1.1.</span> <span class="nav-text">传递方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#值传递"><span class="nav-number">3.1.2.</span> <span class="nav-text">值传递</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针传递"><span class="nav-number">3.1.3.</span> <span class="nav-text">指针传递</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用传递"><span class="nav-number">3.1.4.</span> <span class="nav-text">引用传递</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-拷贝构造函数"><span class="nav-number">3.2.</span> <span class="nav-text">C++拷贝构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量生存周期"><span class="nav-number">3.3.</span> <span class="nav-text">变量生存周期</span></a></li></ol></li></ol></div>
             
 
           </div>
