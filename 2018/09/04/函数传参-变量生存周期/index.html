@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="-linux -shell," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,14 @@
 
 
 
-<meta name="description" content="问题需要批量提交同一执行任务，开多个Screen窗口,如果我们直接在脚本里写 screen -S my_screen, 会导致脚本无法继续执行。">
-<meta name="keywords" content="-linux -shell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="批量创建screen并执行命令">
-<meta property="og:url" content="http://alphafei.cc/2017/10/21/批量创建screen并执行命令/index.html">
+<meta property="og:title" content="函数传参&amp;变量生存周期">
+<meta property="og:url" content="http://alphafei.cc/2018/09/04/函数传参-变量生存周期/index.html">
 <meta property="og:site_name" content="AlphaFei">
-<meta property="og:description" content="问题需要批量提交同一执行任务，开多个Screen窗口,如果我们直接在脚本里写 screen -S my_screen, 会导致脚本无法继续执行。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2017-10-21T07:10:25.000Z">
+<meta property="og:updated_time" content="2018-09-04T03:15:14.961Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="批量创建screen并执行命令">
-<meta name="twitter:description" content="问题需要批量提交同一执行任务，开多个Screen窗口,如果我们直接在脚本里写 screen -S my_screen, 会导致脚本无法继续执行。">
+<meta name="twitter:title" content="函数传参&amp;变量生存周期">
 
 
 
@@ -120,13 +116,13 @@
 
 
 
-  <link rel="canonical" href="http://alphafei.cc/2017/10/21/批量创建screen并执行命令/"/>
+  <link rel="canonical" href="http://alphafei.cc/2018/09/04/函数传参-变量生存周期/"/>
 
 
 
 
 
-  <title>批量创建screen并执行命令 | AlphaFei</title>
+  <title>函数传参&变量生存周期 | AlphaFei</title>
   
 
 
@@ -297,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alphafei.cc/2017/10/21/批量创建screen并执行命令/">
+    <link itemprop="mainEntityOfPage" href="http://alphafei.cc/2018/09/04/函数传参-变量生存周期/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="RobotGF">
@@ -314,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">批量创建screen并执行命令</h1>
+          <h1 class="post-title" itemprop="name headline">函数传参&变量生存周期</h1>
         
 
         <div class="post-meta">
@@ -326,8 +322,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-21T15:00:08+08:00">
-                2017-10-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-04T11:15:14+08:00">
+                2018-09-04
               </time>
             
 
@@ -336,28 +332,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -368,8 +342,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/21/批量创建screen并执行命令/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/10/21/批量创建screen并执行命令/" itemprop="commentsCount"></span>
+                <a href="/2018/09/04/函数传参-变量生存周期/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/09/04/函数传参-变量生存周期/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -403,12 +377,7 @@
       
 
       
-        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>需要批量提交同一执行任务，开多个Screen窗口,如果我们直接在脚本里写 screen -S my_screen, 会导致脚本无法继续执行。</p>
-<a id="more"></a>
-<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>screen -dmS：直接建立screen<br>然后通过发送命令到screen 进行执行<br>脚本如下</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>!/bin/bash</div><div class="line"></div><div class="line">for index in $(seq 0 19)</div><div class="line">do</div><div class="line">    screen_name=$"md5_$&#123;index&#125;"</div><div class="line"></div><div class="line">    #创建screen</div><div class="line">    screen -dmS $&#123;screen_name&#125;</div><div class="line">    echo"Screen $&#123;screen_name&#125; is set up!"</div><div class="line"></div><div class="line">    cmd=$" ./a.test</div><div class="line"></div><div class="line">    screen -x -S $&#123;screen_name&#125; -p 0 -X stuff "$&#123;cmd&#125;"</div><div class="line">    screen -x -S $&#123;screen_name&#125; -p 0 -X stuff '\n'</div><div class="line"></div><div class="line">    echo "Command is RUNING!"</div><div class="line"></div><div class="line">done</div></pre></td></tr></table></figure>
-<h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><p>直接通过shell脚本，批量打开screen 然后发送命令到screen 窗口进行执行。</p>
-
+        
       
     </div>
     
@@ -460,37 +429,6 @@
 
     <footer class="post-footer">
       
-         
-     <div>
-      
-      <ul class="post-copyright">
-         <li class="post-copyright-link">
-          <strong>本文作者：</strong>
-          <a href="/" title="欢迎访问 RobotGF 的个人博客">RobotGF</a>
-        </li>
-        <li class="post-copyright-link">
-          <strong>本文标题：</strong>
-          <a href="http://alphafei.cc/2017/10/21/批量创建screen并执行命令/" title="批量创建screen并执行命令">批量创建screen并执行命令</a>
-        </li>
-        <li class="post-copyright-link">
-          <strong>本文链接：</strong>
-          <a href="http://alphafei.cc/2017/10/21/批量创建screen并执行命令/" title="批量创建screen并执行命令">http://alphafei.cc/2017/10/21/批量创建screen并执行命令/</a>
-        </li>
-        <li class="post-copyright-date">
-            <strong>发布时间：</strong>2017年10月21日 - 15时10分
-        </li>
-        <li class='post-copyright-state'>
-            <strong>转载说明：</strong>欢迎转载，转载请注明出处！
-        </li>
-      </ul>
-    
-  </div>
-        <div class="post-tags">
-          
-            <a href="/tags/linux-shell/" rel="tag"># -linux -shell</a>
-          
-        </div>
-      
 
       
       
@@ -500,8 +438,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/09/Block Cipher Mode of Operation 08.32.31/" rel="next" title="Block Cipher Mode of Operation">
-                <i class="fa fa-chevron-left"></i> Block Cipher Mode of Operation
+              <a href="/2017/10/21/批量创建screen并执行命令/" rel="next" title="批量创建screen并执行命令">
+                <i class="fa fa-chevron-left"></i> 批量创建screen并执行命令
               </a>
             
           </div>
@@ -509,10 +447,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/04/函数传参-变量生存周期/" rel="prev" title="函数传参&变量生存周期">
-                函数传参&变量生存周期 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -594,17 +528,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -690,22 +615,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决"><span class="nav-number">2.</span> <span class="nav-text">解决</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行"><span class="nav-number">3.</span> <span class="nav-text">运行</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -874,7 +783,7 @@
 		_hcwp.push({widget:"Bloggerstream", widget_id: 96400, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 96400, xid: "2017/10/21/批量创建screen并执行命令/"});
+		_hcwp.push({widget:"Stream", widget_id: 96400, xid: "2018/09/04/函数传参-变量生存周期/"});
 		
 
 		(function() {

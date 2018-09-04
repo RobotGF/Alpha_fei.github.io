@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="-linux -shell," />
+  <meta name="keywords" content="cryptography," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="问题需要批量提交同一执行任务，开多个Screen窗口,如果我们直接在脚本里写 screen -S my_screen, 会导致脚本无法继续执行。">
-<meta name="keywords" content="-linux -shell">
+<meta name="description" content="Background In cryptography, a block cipher mode of operation is an algorithm that uses a block cipher to provide an information service such as confidentiality or authenticity. A block cipher by itsel">
+<meta name="keywords" content="cryptography">
 <meta property="og:type" content="article">
-<meta property="og:title" content="批量创建screen并执行命令">
-<meta property="og:url" content="http://alphafei.cc/2017/10/21/批量创建screen并执行命令/index.html">
+<meta property="og:title" content="Block Cipher Mode of Operation">
+<meta property="og:url" content="http://alphafei.cc/2017/10/09/Block Cipher Mode of Operation 08.32.31/index.html">
 <meta property="og:site_name" content="AlphaFei">
-<meta property="og:description" content="问题需要批量提交同一执行任务，开多个Screen窗口,如果我们直接在脚本里写 screen -S my_screen, 会导致脚本无法继续执行。">
+<meta property="og:description" content="Background In cryptography, a block cipher mode of operation is an algorithm that uses a block cipher to provide an information service such as confidentiality or authenticity. A block cipher by itsel">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2017-10-21T07:10:25.000Z">
+<meta property="og:updated_time" content="2017-10-09T08:47:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="批量创建screen并执行命令">
-<meta name="twitter:description" content="问题需要批量提交同一执行任务，开多个Screen窗口,如果我们直接在脚本里写 screen -S my_screen, 会导致脚本无法继续执行。">
+<meta name="twitter:title" content="Block Cipher Mode of Operation">
+<meta name="twitter:description" content="Background In cryptography, a block cipher mode of operation is an algorithm that uses a block cipher to provide an information service such as confidentiality or authenticity. A block cipher by itsel">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://alphafei.cc/2017/10/21/批量创建screen并执行命令/"/>
+  <link rel="canonical" href="http://alphafei.cc/2017/10/09/Block Cipher Mode of Operation 08.32.31/"/>
 
 
 
 
 
-  <title>批量创建screen并执行命令 | AlphaFei</title>
+  <title>Block Cipher Mode of Operation | AlphaFei</title>
   
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alphafei.cc/2017/10/21/批量创建screen并执行命令/">
+    <link itemprop="mainEntityOfPage" href="http://alphafei.cc/2017/10/09/Block Cipher Mode of Operation 08.32.31/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="RobotGF">
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">批量创建screen并执行命令</h1>
+          <h1 class="post-title" itemprop="name headline">Block Cipher Mode of Operation</h1>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-21T15:00:08+08:00">
-                2017-10-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-09T11:23:18+08:00">
+                2017-10-09
               </time>
             
 
@@ -349,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
+                  <a href="/categories/Cryptography/" itemprop="url" rel="index">
+                    <span itemprop="name">Cryptography</span>
                   </a>
                 </span>
 
@@ -368,8 +368,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/21/批量创建screen并执行命令/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/10/21/批量创建screen并执行命令/" itemprop="commentsCount"></span>
+                <a href="/2017/10/09/Block Cipher Mode of Operation 08.32.31/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/10/09/Block Cipher Mode of Operation 08.32.31/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -403,11 +403,91 @@
       
 
       
-        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>需要批量提交同一执行任务，开多个Screen窗口,如果我们直接在脚本里写 screen -S my_screen, 会导致脚本无法继续执行。</p>
+        <h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><blockquote>
+<p>In cryptography, a block cipher mode of operation is an algorithm that uses a block cipher to provide an information service such as confidentiality or authenticity. A block cipher by itself is only suitable for the secure cryptographic transformation (encryption or decryption) of one fixed-length group of bits called a block.A mode of operation describes how repeatedly to apply a cipher’s single-block operation securely to transform amounts of data larger than a block.<a href="https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation" target="_blank" rel="external">Wikipedia</a></p>
+</blockquote>
 <a id="more"></a>
-<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>screen -dmS：直接建立screen<br>然后通过发送命令到screen 进行执行<br>脚本如下</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>!/bin/bash</div><div class="line"></div><div class="line">for index in $(seq 0 19)</div><div class="line">do</div><div class="line">    screen_name=$"md5_$&#123;index&#125;"</div><div class="line"></div><div class="line">    #创建screen</div><div class="line">    screen -dmS $&#123;screen_name&#125;</div><div class="line">    echo"Screen $&#123;screen_name&#125; is set up!"</div><div class="line"></div><div class="line">    cmd=$" ./a.test</div><div class="line"></div><div class="line">    screen -x -S $&#123;screen_name&#125; -p 0 -X stuff "$&#123;cmd&#125;"</div><div class="line">    screen -x -S $&#123;screen_name&#125; -p 0 -X stuff '\n'</div><div class="line"></div><div class="line">    echo "Command is RUNING!"</div><div class="line"></div><div class="line">done</div></pre></td></tr></table></figure>
-<h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><p>直接通过shell脚本，批量打开screen 然后发送命令到screen 窗口进行执行。</p>
+<h2 id="Modes"><a href="#Modes" class="headerlink" title="Modes"></a>Modes</h2><h3 id="CBC"><a href="#CBC" class="headerlink" title="CBC"></a>CBC</h3><h3 id="ECB"><a href="#ECB" class="headerlink" title="ECB"></a>ECB</h3><h3 id="CFB"><a href="#CFB" class="headerlink" title="CFB"></a>CFB</h3><h3 id="OFB"><a href="#OFB" class="headerlink" title="OFB"></a>OFB</h3><h3 id="CTR"><a href="#CTR" class="headerlink" title="CTR"></a>CTR</h3><h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Formulas</th>
+<th>Ciphertext</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ECB</td>
+<td>Yi=F(PlainTexti,Key)</td>
+<td>Yi</td>
+</tr>
+<tr>
+<td>CBC</td>
+<td>Yi=PlainTexti XOR Ciphertexti-1</td>
+<td>F(Y,key); Ciphertext0=IV</td>
+</tr>
+<tr>
+<td>PCBC</td>
+<td>Yi=PlainTexti XOR (Ciphertexti-1 XOR PlainTexti-1)</td>
+<td>F(Y,key);Ciphertext0=IV</td>
+</tr>
+<tr>
+<td>CFB</td>
+<td>Yi=Ciphertexti-1</td>
+<td>Plaintext XOR F(Y,key);Ciphertext0=IV</td>
+</tr>
+<tr>
+<td>OFB</td>
+<td>Yi=F(Key,Ii-1);Y0=IV</td>
+<td>Plaintext XOR Yi</td>
+</tr>
+<tr>
+<td>CTR</td>
+<td>Yi=F(Key,IV + g(i) );IV=token();</td>
+<td>Plaintext XOR Yi</td>
+</tr>
+</tbody>
+</table>
+<p>Note: g(i) is any deterministic function, often the <a href="https://en.wikipedia.org/wiki/Identity_function" target="_blank" rel="external">identity function</a>.</p>
+<h3 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>CBC</th>
+<th>ECB</th>
+<th>CFB</th>
+<th>OFB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Encryption parallelizable</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Decryption parallelizable</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Random read access</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li><p><a href="https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation" target="_blank" rel="external">[Wikipedia]Block cipher mode of operation</a></p>
+<p>​</p>
+</li>
+</ol>
 
       
     </div>
@@ -470,14 +550,14 @@
         </li>
         <li class="post-copyright-link">
           <strong>本文标题：</strong>
-          <a href="http://alphafei.cc/2017/10/21/批量创建screen并执行命令/" title="批量创建screen并执行命令">批量创建screen并执行命令</a>
+          <a href="http://alphafei.cc/2017/10/09/Block Cipher Mode of Operation 08.32.31/" title="Block Cipher Mode of Operation">Block Cipher Mode of Operation</a>
         </li>
         <li class="post-copyright-link">
           <strong>本文链接：</strong>
-          <a href="http://alphafei.cc/2017/10/21/批量创建screen并执行命令/" title="批量创建screen并执行命令">http://alphafei.cc/2017/10/21/批量创建screen并执行命令/</a>
+          <a href="http://alphafei.cc/2017/10/09/Block Cipher Mode of Operation 08.32.31/" title="Block Cipher Mode of Operation">http://alphafei.cc/2017/10/09/Block Cipher Mode of Operation 08.32.31/</a>
         </li>
         <li class="post-copyright-date">
-            <strong>发布时间：</strong>2017年10月21日 - 15时10分
+            <strong>发布时间：</strong>2017年10月9日 - 11时10分
         </li>
         <li class='post-copyright-state'>
             <strong>转载说明：</strong>欢迎转载，转载请注明出处！
@@ -487,7 +567,7 @@
   </div>
         <div class="post-tags">
           
-            <a href="/tags/linux-shell/" rel="tag"># -linux -shell</a>
+            <a href="/tags/cryptography/" rel="tag"># cryptography</a>
           
         </div>
       
@@ -500,8 +580,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/09/Block Cipher Mode of Operation 08.32.31/" rel="next" title="Block Cipher Mode of Operation">
-                <i class="fa fa-chevron-left"></i> Block Cipher Mode of Operation
+              <a href="/2017/10/09/vim教程-插件Tagbar-ctags实现函数跳转 08.32.31/" rel="next" title="vim教程-插件Tagbar+ctags实现函数跳转">
+                <i class="fa fa-chevron-left"></i> vim教程-插件Tagbar+ctags实现函数跳转
               </a>
             
           </div>
@@ -510,8 +590,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/04/函数传参-变量生存周期/" rel="prev" title="函数传参&变量生存周期">
-                函数传参&变量生存周期 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/21/批量创建screen并执行命令/" rel="prev" title="批量创建screen并执行命令">
+                批量创建screen并执行命令 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -700,7 +780,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决"><span class="nav-number">2.</span> <span class="nav-text">解决</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行"><span class="nav-number">3.</span> <span class="nav-text">运行</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Background"><span class="nav-number">1.</span> <span class="nav-text">Background</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Modes"><span class="nav-number">2.</span> <span class="nav-text">Modes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CBC"><span class="nav-number">2.1.</span> <span class="nav-text">CBC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ECB"><span class="nav-number">2.2.</span> <span class="nav-text">ECB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CFB"><span class="nav-number">2.3.</span> <span class="nav-text">CFB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OFB"><span class="nav-number">2.4.</span> <span class="nav-text">OFB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CTR"><span class="nav-number">2.5.</span> <span class="nav-text">CTR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary"><span class="nav-number">3.</span> <span class="nav-text">Summary</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparison"><span class="nav-number">3.1.</span> <span class="nav-text">Comparison</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
@@ -874,7 +954,7 @@
 		_hcwp.push({widget:"Bloggerstream", widget_id: 96400, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 96400, xid: "2017/10/21/批量创建screen并执行命令/"});
+		_hcwp.push({widget:"Stream", widget_id: 96400, xid: "2017/10/09/Block Cipher Mode of Operation 08.32.31/"});
 		
 
 		(function() {
